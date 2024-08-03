@@ -1,19 +1,21 @@
 <app-header></app-header>
 
 <main>
-    <ul id="users">
-        <li>
-            <app-user [avatar]="users[0].avatar" [name]="users[0].name"></app-user>
-        </li>
-        <li>
-            <app-user [avatar]="users[1].avatar" [name]="users[1].name"></app-user>
-        </li>
-        <li>
-            <app-user [avatar]="users[2].avatar" [name]="users[2].name"></app-user>
-        </li>
-        <li>
-            <app-user [avatar]="users[3].avatar" [name]="users[3].name"></app-user>
-        </li>
-    </ul>
+  <ul id="users">
+    @for (user of users; track user.id) {
+      <li>
+        <app-user
+          [user]="user"
+          (selectedUser)="onSelectUser($event)"
+        ></app-user>
+      </li>
+    }
+  </ul>
+
+  @if (userSelected) {
+    <app-tasks [name]="userSelected"></app-tasks>
+  } @else {
+    <p>teste</p>
+  }
 </main>
 <!-- <app-user /> tags que não possuem escrita podem ser definidas no formato auto fechativa-->
