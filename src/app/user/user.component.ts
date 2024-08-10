@@ -1,5 +1,5 @@
 import { Component, computed, EventEmitter, input, Input, output, Output, signal } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
+import { DUMMY_USERS } from '../mock/dummy-users';
 import { User } from '../domain/user';
 
 // Exemplo

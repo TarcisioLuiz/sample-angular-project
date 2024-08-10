@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from "./user/user.component";
-import { DUMMY_USERS } from './dummy-users';
+import { DUMMY_USERS } from './mock/dummy-users';
 import { TasksComponent } from './tasks/tasks.component';
+import { User } from './domain/user';
 
 // type User = {
 //   id: string
@@ -27,10 +28,10 @@ import { TasksComponent } from './tasks/tasks.component';
 export class AppComponent {
   title = 'sample-angular-project';
   users = DUMMY_USERS;
-  userSelected?: string
+  userSelected?: User
 
   onSelectUser(id: string) {
-    this.userSelected = this.users.find((user) => user.id === id)?.name
+    this.userSelected = this.users.find((user) => user.id === id)
     console.log('Selected user with id ' + id)
   }
 }
