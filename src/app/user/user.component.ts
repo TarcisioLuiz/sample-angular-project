@@ -14,6 +14,7 @@ import { User } from '../domain/user';
 })
 export class UserComponent {
   @Input({required: true}) user?: User
+  @Input() selected?: boolean
   @Output() selectedUser = new EventEmitter<string>()
   
   get imagePath() {
