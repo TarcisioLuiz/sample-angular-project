@@ -1,6 +1,7 @@
 import { Component, computed, EventEmitter, input, Input, output, Output, signal } from '@angular/core';
 import { DUMMY_USERS } from '../mock/dummy-users';
 import { User } from '../domain/user';
+import { CardComponent } from "../shared/card/card.component";
 
 // Exemplo
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
@@ -8,7 +9,7 @@ import { User } from '../domain/user';
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
